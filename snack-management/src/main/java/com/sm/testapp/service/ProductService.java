@@ -1,6 +1,6 @@
 package com.sm.testapp.service;
 
-import com.sm.testapp.repository.SnackRepository;
+import com.sm.testapp.repository.ProductRepository;
 
 public class ProductService {
     private final SnackRepository snackRepository;
@@ -8,5 +8,4 @@ public class ProductService {
     public ProductService() {
         snackRepository = new SnackRepository();
     }
-
 }
