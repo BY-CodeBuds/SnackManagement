@@ -1,12 +1,12 @@
 package com.sm.testapp.service;
 
-import com.sm.testapp.repository.SnackRepository;
+import com.sm.testapp.repository.ProductRepository;
 
 public class SnackService {
-    private final SnackRepository snackRepository;
+    private final ProductRepository snackRepository;
 
     public SnackService() {
-        snackRepository = new SnackRepository();
+        snackRepository = new ProductRepository();
     }
 
 }
