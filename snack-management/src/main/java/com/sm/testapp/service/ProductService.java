@@ -3,9 +3,9 @@ package com.sm.testapp.service;
 import com.sm.testapp.repository.ProductRepository;
 
 public class ProductService {
-    private final SnackRepository snackRepository;
+    private final ProductRepository productRepository;
 
     public ProductService() {
-        snackRepository = new SnackRepository();
-    }
+        productRepository = new ProductRepository();
+}
 }
