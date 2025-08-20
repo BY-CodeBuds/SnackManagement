@@ -67,5 +67,11 @@ public class ProductRepository {
 
     }
 
-
+    public ArrayList<Product> findAllProduct() {
+        ArrayList<Product> returnList = new ArrayList<>();
+        for(Product product : productList){
+            if(product.getProduceStatus() == ProduceStatus.INPRODUCTION) returnList.add(product);
+        }
+        return returnList;
+    }
 }
