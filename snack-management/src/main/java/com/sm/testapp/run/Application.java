@@ -43,9 +43,16 @@ public class Application {
 
     }
 
-    private static Object chosenName() {
+    private static Product add() {
+        Product product = null;
         Scanner sc = new Scanner(System.in);
-        sc.nextLine();
+        System.out.println("");
+        return null;
+    }
+
+    private static String chosenName() {
+        Scanner sc = new Scanner(System.in);
+        sc.nextLine();  // 버퍼 제거
         System.out.print("제품 이름을 입력하세요: ");
         return sc.nextLine();
     }
