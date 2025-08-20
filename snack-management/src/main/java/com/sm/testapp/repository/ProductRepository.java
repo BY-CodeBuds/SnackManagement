@@ -74,4 +74,13 @@ public class ProductRepository {
         }
         return returnList;
     }
+
+    public Product searchProduct(String proName) {
+        for(Product product : productList){
+            if(product.getProName() == proName){
+                return product;
+            }
+        }
+        return null;
+    }
 }
