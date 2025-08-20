@@ -1,9 +1,10 @@
 package com.sm.testapp.run;
 
+import com.sm.testapp.aggregate.Category;
 import com.sm.testapp.aggregate.Product;
 import com.sm.testapp.service.ProductService;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
     private static final ProductService ps = new ProductService();
@@ -46,8 +47,38 @@ public class Application {
     private static Product add() {
         Product product = null;
         Scanner sc = new Scanner(System.in);
-        System.out.println("");
-        return null;
+        System.out.print("제품 이름을 입력하세요: ");
+        String name = sc.nextLine();
+
+        System.out.print("들어가는 재료의 갯수를 입력하세요: ");
+        int ingreNum = sc.nextInt();
+        String[] arr = new String[ingreNum];
+
+        sc.nextLine(); //버퍼 제거
+
+        for (int i = 0; i < ingreNum; i++) {
+            System.out.print((i + 1)  + "번째 재료를 입력하세요: ");
+            arr[i] = sc.nextLine();
+        }
+        System.out.print("제조날짜를 입력하세요: ");
+        String made = sc.nextLine();
+
+        System.out.print("유통기한을 입력하세요: ");
+        String expire = sc.nextLine();
+
+        System.out.println("카테고리를 입력하세요: ");
+        String cate = sc.nextLine();
+        Category cg = null;
+
+        switch(cate){
+            case "SNACK": cg = Category.SNACK; break;
+            case "BREAD": cg = Category.BREAD; break;
+            case "CHOCOLATE": cg = Category.CHOCOLATE; break;
+        }
+
+        product = new Product(name, arr, made, expire, cg);
+
+        return product;
     }
 
     private static String chosenName() {
