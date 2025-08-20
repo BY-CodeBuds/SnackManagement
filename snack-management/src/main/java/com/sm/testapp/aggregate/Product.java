@@ -6,15 +6,15 @@ public class Product {
     private int proNo;
     private String proName;
     private String[] ingredient;
-    private int madeDate;
-    private int expirationDate;
+    private String madeDate;
+    private String expirationDate;
     private Category category;
     private ProduceStatus produceStatus;
 
     public Product() {
     }
 
-    public Product(int proNo, String proName, String[] ingredient, int madeDate, int expirationDate, Category category, ProduceStatus produceStatus) {
+    public Product(int proNo, String proName, String[] ingredient, String madeDate, String expirationDate, Category category, ProduceStatus produceStatus) {
         this.proNo = proNo;
         this.proName = proName;
         this.ingredient = ingredient;
@@ -48,19 +48,19 @@ public class Product {
         this.ingredient = ingredient;
     }
 
-    public int getMadeDate() {
+    public String getMadeDate() {
         return madeDate;
     }
 
-    public void setMadeDate(int madeDate) {
+    public void setMadeDate(String madeDate) {
         this.madeDate = madeDate;
     }
 
-    public int getExpirationDate() {
+    public String getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(int expirationDate) {
+    public void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
     }
 
@@ -86,8 +86,8 @@ public class Product {
                 "proNo=" + proNo +
                 ", proName='" + proName + '\'' +
                 ", ingredient=" + Arrays.toString(ingredient) +
-                ", madeDate=" + madeDate +
-                ", expirationDate=" + expirationDate +
+                ", madeDate='" + madeDate + '\'' +
+                ", expirationDate='" + expirationDate + '\'' +
                 ", category=" + category +
                 ", produceStatus=" + produceStatus +
                 '}';
