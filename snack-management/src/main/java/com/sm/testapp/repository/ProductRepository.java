@@ -23,8 +23,11 @@ public class ProductRepository {
             
             saveProducts(defaultProductList);
         }
+
+        loadProducts();
     }
 
+    /* 설명. ArrayList에 담긴 데이터를 파일로 내보냄 */
     private void saveProducts(ArrayList<Product> defaultProductList) {
         ObjectOutputStream oos = null;
         try {
@@ -42,4 +45,27 @@ public class ProductRepository {
             }
         }
     }
+
+
+    /* 설명. 파일로부터 데이터를 읽어옴 */
+    private void loadProducts() {
+        try (ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)))) {
+            while (true) {
+                productList.add((Product) ois.readObject());
+            }
+        } catch (EOFException e) {
+            System.out.println("제품 정보 읽어오기 완료");
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
 }
