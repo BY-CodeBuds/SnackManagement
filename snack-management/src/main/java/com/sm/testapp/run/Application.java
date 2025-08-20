@@ -23,7 +23,7 @@ public class Application {
 
             switch(input){
                 case 1: ps.findAllProduct(); break;
-                case 2: ps.searchProduct(chosenName()); break;
+                case 2: ps.searchProduct(chosenName());break;
                 case 3: ps.registProduct(add()); break;
                 case 4:
                     Product selectProduct = ps.findProductForMod(chosenName());
