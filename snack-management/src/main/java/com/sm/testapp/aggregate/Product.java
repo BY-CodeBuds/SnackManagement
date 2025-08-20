@@ -15,6 +15,14 @@ public class Product implements Serializable {
     public Product() {
     }
 
+    public Product(String proName, String[] ingredient, String madeDate, String expirationDate, Category category) {
+        this.proName = proName;
+        this.ingredient = ingredient;
+        this.madeDate = madeDate;
+        this.expirationDate = expirationDate;
+        this.category = category;
+    }
+
     public Product(int proNo, String proName, String[] ingredient, String madeDate, String expirationDate, Category category, ProduceStatus produceStatus) {
         this.proNo = proNo;
         this.proName = proName;
